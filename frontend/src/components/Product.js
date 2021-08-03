@@ -38,13 +38,16 @@ const useStyles = makeStyles((theme) => {
       },
       color: "inherit",
     },
+    imageLink: {
+      textDecoration: "none",
+    },
   };
 });
 
 const Product = ({ product }) => {
   const classes = useStyles();
   return (
-    <Link to={`product/${product._id}`}>
+    <Link to={`product/${product._id}`} className={classes.imageLink}>
       <Card variant="outlined" elevation={0} className={classes.card}>
         <CardActionArea>
           <CardMedia className={classes.media} image={product.image} />

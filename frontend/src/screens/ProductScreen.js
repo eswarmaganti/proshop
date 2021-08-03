@@ -14,11 +14,11 @@ import {
   TableCell,
   TableRow,
 } from "@material-ui/core";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import products from "../products";
 import Rating from "../components/Rating";
 import { ArrowBackIosRounded, ShoppingCartRounded } from "@material-ui/icons";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -40,9 +40,20 @@ const useStyles = makeStyles((theme) => {
 });
 
 const ProductScreen = ({ match }) => {
-  const product = products.find((p) => p._id == match.params.id);
   const history = useHistory();
   const classes = useStyles();
+
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const { data } = await axios.get(`/api/product/${match.params.id}`);
+      setProduct(data);
+      console.log(data);
+    };
+    fetchProduct();
+  }, [match]);
+
   return (
     <Box className={classes.productPage}>
       <Button

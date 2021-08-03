@@ -32,7 +32,6 @@ const useStyles = makeStyles((theme) => {
 const Header = () => {
   const classes = useStyles();
   const history = useHistory();
-  console.log(history);
   return (
     <AppBar position="static">
       <Container maxWidth="md">
