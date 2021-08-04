@@ -4,3 +4,15 @@
   box-sizing: border-box;
   font-family: "Poppons", sans-serif;
 }
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: black;
+}
+a:focus,
+a:visited {
+  text-decoration: none;
+}

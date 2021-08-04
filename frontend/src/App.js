@@ -11,6 +11,7 @@ import {
 import { blue } from "@material-ui/core/colors";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
+import CartScreen from "./screens/CartScreen";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -43,10 +44,11 @@ const App = () => {
     <Router>
       <ThemeProvider theme={theme}>
         <Header />
-        <Container maxWidth="md" className={classes.mainContainer}>
+        <Container maxWidth="lg" className={classes.mainContainer}>
           <Switch>
             <Route path="/" exact component={HomeScreen} />
-            <Route path="/product/:id" exact component={ProductScreen} />
+            <Route path="/products/:id" exact component={ProductScreen} />
+            <Route path="/cart/:id?" exact component={CartScreen} />
           </Switch>
         </Container>
         <Footer />

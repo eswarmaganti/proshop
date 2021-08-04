@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => {
       color: "inherit",
     },
     imageLink: {
-      textDecoration: "none",
+      textDecoration: "none !important",
     },
   };
 });
@@ -47,12 +47,12 @@ const useStyles = makeStyles((theme) => {
 const Product = ({ product }) => {
   const classes = useStyles();
   return (
-    <Link to={`product/${product._id}`} className={classes.imageLink}>
+    <Link to={`products/${product._id}`} className={classes.imageLink}>
       <Card variant="outlined" elevation={0} className={classes.card}>
         <CardActionArea>
           <CardMedia className={classes.media} image={product.image} />
           <CardContent>
-            <Link to={`product/${product._id}`} className={classes.link}>
+            <Link to={`products/${product._id}`} className={classes.link}>
               <Typography
                 gutterBottom
                 component="h4"

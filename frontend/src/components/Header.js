@@ -17,11 +17,14 @@ const useStyles = makeStyles((theme) => {
       fontSize: 20,
       fontWeight: "medium",
     },
-    appbar: {
+    toolbar: {
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",
       padding: 0,
+    },
+    appbar: {
+      position: "sticky",
     },
     button: {
       margin: "0 10px",
@@ -33,9 +36,9 @@ const Header = () => {
   const classes = useStyles();
   const history = useHistory();
   return (
-    <AppBar position="static">
-      <Container maxWidth="md">
-        <Toolbar className={classes.appbar}>
+    <AppBar className={classes.appbar}>
+      <Container maxWidth="lg">
+        <Toolbar className={classes.toolbar}>
           <Typography variant="h6" className={classes.title}>
             My E-Shop
           </Typography>
